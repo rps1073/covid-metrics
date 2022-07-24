@@ -21,6 +21,3 @@ except Exception as e:
     print(e)
 
 print('Task complete')
-
-    # df = pd.read_sql('SELECT * FROM wastewater.daily_cases_average;', con = conn_string)
-    # print(df)
