@@ -19,8 +19,8 @@ try:
     conn = db.connect()
 
     covid_cases = pd.read_csv('https://raw.githubusercontent.com/biobotanalytics/covid19-wastewater-data/master/cases_by_county.csv', index_col=[0])
-    # cases_MA = covid_cases[covid_cases['state'] == 'MA']
-    # cases_MA_formatted = cases(cases_MA)
+    cases_MA = covid_cases[covid_cases['state'] == 'MA']
+    cases_MA_formatted = cases(cases_MA)
     print(covid_cases)
 
     covid_cases.to_sql('daily_cases_average', conn, schema='covid_metrics_raw', if_exists='replace', index=False)
